@@ -1,0 +1,23 @@
+* {
+    color: #444;
+    font-family: sans-serif;
+}
+
+.quiz {
+    width: 30vw;
+    margin: auto;
+}
+
+.quiz-title {
+    font-family: Helvetica, sans-serif;
+}
+
+.quiz-instructions h3,
+.quiz-instructions p {
+    color: brown !important;
+}
+
+.quiz-question {
+    color: rgb(1, 1, 129);
+    font-size: 1.3rem;
+}
