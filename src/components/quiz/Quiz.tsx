@@ -72,8 +72,6 @@ export function Quiz() {
   const [state, setState] = useState<QuizState>(getInitialState())
 
   const handleAnswerChange = (event: any) => {
-    console.log('answer', event.target.value)
-    
     setState({
       ...state,
       currentAnswer: event.target.value,
@@ -81,13 +79,23 @@ export function Quiz() {
   }
 
   const resetRadioButtons = (btnsName: string) => {
-    console.log({btnsName})
-    console.log('buttons', document.getElementsByName(btnsName))
-
     document.getElementsByName(btnsName).forEach(btn => {
       // @ts-ignore
       btn.checked = false
     })
+  }
+
+  /** Selects radio button of type string by value from a group of them selected by name */
+  const selectStringRadioButton = (btnsName: string, radioBtnValue: string) => {
+    const btnToSelect = Array.from(document.getElementsByName(btnsName)).find(
+      btnNode => {
+        //@ts-ignore
+        return btnNode.value === radioBtnValue
+      }
+    ) || null;
+
+    // @ts-ignore
+    if (btnToSelect) btnToSelect.checked = true
   }
 
   const handleNextQuestion = () => {
@@ -117,14 +125,21 @@ export function Quiz() {
 
   const handlePreviousQuestion = () => {
     
-    const lastOperation = state.currentIndex >= 0 ? state.operationHistory[state.currentIndex-1] : ""
+    const lastOperation = state.currentIndex >= 0 
+      ? state.operationHistory[state.currentIndex-1] : ""
+    const currentIndex = --state.currentIndex
+    const lastAnswer = state.answers[state.answers.length - 1]
+
+    // Wait some time so the DOM is ready before selecting the radio buttons.
+    // It appears that even a value of 0 works so I kept that.
+    setTimeout(() => selectStringRadioButton(`option${currentIndex+1}`, lastAnswer), 0)
 
     setState({
       ...state,
-      score: state.lastOperation === "increment" ? --state.score : ++state.score, // Undo the score from previous answer
-      currentIndex: --state.currentIndex,
+      score: lastOperation === "increment" ? --state.score : state.score, // Undo the score from previous answer
+      currentIndex,
       answers: [...state.answers.slice(0, state.currentIndex)],
-      currentAnswer: "",
+      currentAnswer: lastAnswer,
       lastOperation,
       operationHistory: state.operationHistory.slice(0, state.currentIndex)
     })
@@ -158,8 +173,9 @@ export function Quiz() {
     alert('cleaning quiz')
     setState(getInitialState())
 
-    // Wait some time for the radio buttons to be ready before cleaning them.
-    setTimeout(() => resetRadioButtons('option1'), 500)
+    // Wait some time for the radio buttons to be ready before cleaning them
+    // (0 is working for React for a reason I don't currently know)
+    setTimeout(() => resetRadioButtons('option1'), 0)
     alert('done')
   }
 
