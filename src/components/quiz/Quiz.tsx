@@ -126,7 +126,7 @@ export function Quiz() {
       answers: [...state.answers.slice(0, state.currentIndex)],
       currentAnswer: "",
       lastOperation,
-      operationHistory: state.operationHistory.slice(0, state.currentIndex-1)
+      operationHistory: state.operationHistory.slice(0, state.currentIndex)
     })
   }
 
