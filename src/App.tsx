@@ -1,4 +1,4 @@
-import { Quiz } from './Quiz'
+import { Quiz } from './components/quiz/Quiz'
 
 function App() {
   return (

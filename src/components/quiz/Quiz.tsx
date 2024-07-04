@@ -81,6 +81,9 @@ export function Quiz() {
   }
 
   const resetRadioButtons = (btnsName: string) => {
+    console.log({btnsName})
+    console.log('buttons', document.getElementsByName(btnsName))
+
     document.getElementsByName(btnsName).forEach(btn => {
       // @ts-ignore
       btn.checked = false
@@ -154,6 +157,9 @@ export function Quiz() {
   const cleanQuiz = () => {
     alert('cleaning quiz')
     setState(getInitialState())
+
+    // Wait some time for the radio buttons to be ready before cleaning them.
+    setTimeout(() => resetRadioButtons('option1'), 500)
     alert('done')
   }
 
