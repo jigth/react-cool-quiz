@@ -9,7 +9,7 @@ type Question = {
 
 const questions: Question[] = [
   {
-    question: "What is the natural satellite closest to the earth?",
+    question: "What is the natural satellite closest to The Earth?",
     answer: "The Moon",
     options: [
       "Jupiter",
