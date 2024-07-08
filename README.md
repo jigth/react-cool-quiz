@@ -11,7 +11,7 @@ It is very simple but it has been designed in a good enough way so there should 
 * NodeJS (version 18.18.0 or later)
 * yarn package manager (or NPM)
 
-## Installing and run the app
+## Installing and running the app
 
 I will only show instructions for YARN, if you want to use NPM the process is identical, there's not much else to know.
 
