@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+# React Cool Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A quiz application for react made using Vite + TypeScript + React.
 
-Currently, two official plugins are available:
+It uses two main components (app and quiz) and state management and logic for handling the quiz questions. Uses a simple score system and has four questions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It is very simple but it has been designed in a good enough way so there should be no evident bugs.
 
-## Expanding the ESLint configuration
+## Dependencies.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+* NodeJS (version 18.18.0 or later)
+* yarn package manager (or NPM)
 
-- Configure the top-level `parserOptions` property like this:
+## Installing and run the app
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+I will only show instructions for YARN, if you want to use NPM the process is identical, there's not much else to know.
+
+1. Clone the repo and open its root path from a shell (the terminal application)
+
+2. Install packages using a Node package manager such as YARN or NPM and run it
+
+```bash
+yarn # Install packages
+yarn dev # Run it in dev mode
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
