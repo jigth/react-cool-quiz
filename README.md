@@ -1,5 +1,7 @@
 # React Cool Quiz
 
+![imagen](https://github.com/jigth/react-cool-quiz/assets/49813759/2fbc2b71-f6d1-4652-bb09-d7c21147ded7)
+
 A quiz application for react made using Vite + TypeScript + React.
 
 It uses two main components (app and quiz) and state management and logic for handling the quiz questions. Uses a simple score system and has four questions.
