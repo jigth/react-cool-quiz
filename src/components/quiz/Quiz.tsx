@@ -186,8 +186,8 @@ export function Quiz() {
 
       <div className="quiz-instructions" style={{ display: state.currentIndex > 0 ? 'none' : ''}}>
         <h3>Instructions</h3>
-        <p style={{ width: "20vw"}}>Please select and answer in each round and in the last question just press the "submit" button.</p>
-        <p style={{ width: "20vw"}}>Each time you select the correct answer you will get a point, each time you select a wrong one you will not get any points for that question. Good luck</p>
+        <p style={{ width: "20vw"}}>Please select an answer in each round and in the last question just press the "submit" button.</p>
+        <p style={{ width: "20vw"}}>Each time you select the correct answer you will get a point, each time you select a wrong one you will not get any points for that question. Good luck!</p>
       </div>
 
       <div>
